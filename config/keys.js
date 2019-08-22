@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb://localhost:27017/ptsdb",
+    mongoURI: "mongodb://<dbuser>:<dbpassword>@ds211718.mlab.com:11718/heroku_2rqcs8wp",
     secretOrKey: "secret"
 };
