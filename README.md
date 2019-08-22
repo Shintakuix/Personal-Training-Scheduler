@@ -1,1 +1,1 @@
-# Personal-Training-Scheduler
+# Personal-Trainer-Scheduler
