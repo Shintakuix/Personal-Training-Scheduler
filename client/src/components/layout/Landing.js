@@ -1,41 +1,42 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import splashPic from "../../images/splash_home.png"
+import splashPic from "../../images/sched_top.png";
 import './Landing.css';
+import registerimg from "../../images/REGISTER.png"
+import loginimg from "../../images/LOGIN.png"
 
 class Landing extends Component {
   render() {
     return (
 
      <div className="bckimage">
+        <div className="row">
+        <img src={splashPic} alt="splashPic" />
+        </div>
+
+      
       <div  className="container">
+     
+        <div className="row">
+        <div className="col s12 center-align">
+        <span className="splashtext">ARE YOU READY?</span>
+        </div>
+        </div>    
         <div className="row">
           <div className="col s12 center-align">
             <br />
             <div className="col s6">
               <Link
                 to="/register"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
-                Register
+                <img src={registerimg} alt="registerimg" />
               </Link>
             </div>
             <div className="col s6">
               <Link
                 to="/login"
-                style={{
-                    width: "140px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px"
-                  }}
-                className="btn btn-large btn-flat waves-effect white black-text"
               >
-                Log In
+                <img src={loginimg} alt="loginimg" />
               </Link>
             </div>
           </div>
