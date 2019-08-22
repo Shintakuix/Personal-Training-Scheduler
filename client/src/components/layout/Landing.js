@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import splashPic from "../../images/splash_home.png"
+import './Landing.css';
+
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "40vh" }} className="container valign-wrapper">
+
+     <div className="bckimage">
+      <div  className="container">
         <div className="row">
           <div className="col s12 center-align">
             <br />
@@ -36,6 +41,9 @@ class Landing extends Component {
           </div>
         </div>
       </div>
+      </div>
+ 
+
     );
   }
 }

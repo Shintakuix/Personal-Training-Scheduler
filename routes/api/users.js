@@ -5,7 +5,9 @@ const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
+const validateProfileInput = require("../../validation/profile");
 const User = require("../../models/User");
+const UserProfile = require("../../models/Profile");
 
 //Routes
 router.post("/register", (req, res) => {   
@@ -76,6 +78,19 @@ router.post("/login", (req, res) => {
         }
       });
     });
+  });
+  
+router.post("/profile", (req, res) => {   
+    const { errors, isValid } = validateProfileInput(req.body);
+        if (!isValid) {
+        return res.status(400).json(errors);
+      }
+      
+      UserProfile.insert({ 
+        age: req.body.age,
+        weight: req.body.weight,
+        height: req.body.height
+        })
   });
 
   module.exports = router;

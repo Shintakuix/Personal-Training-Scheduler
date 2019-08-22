@@ -1,17 +1,17 @@
 import axios from "axios";
 import {
-  GET_ERRORS,
+  NEW_PROFILE,
 } from "./types";
 
 // Updating Profile
-export const updateProfile = (userData, history) => dispatch => {
+export const updateProfile = (userData) => dispatch => {
   axios
     .post("/api/users/profile", userData)
-    .then(res => history.push("/dashboard"))
-    .catch(err =>
+    .then(res => res.json())
+    .then(post => 
       dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
+        type: NEW_PROFILE,
+        payload: post
       })
     );
 };

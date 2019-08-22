@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { updateProfile } from "../../actions/profileActions";
-
 import classnames from "classnames";
-import { logoutUser } from "../../actions/authActions";
+
 
 class Profile extends Component {
   constructor() {
@@ -15,7 +14,20 @@ class Profile extends Component {
       height: "",
       errors: {}
     };
+
   }
+
+componentWillReceiveProps(nextProps) {
+  if (nextProps.errors) {
+    this.setState({
+      errors: nextProps.errors
+    });
+  }
+}
+
+onChange = e => {
+  this.setState({ [e.target.id]: e.target.value });
+};
 
 onSubmit = e => {
   e.preventDefault();
@@ -24,12 +36,10 @@ const newProfile = {
   weight: this.state.weight,
   height: this.state.height,
 };
-this.props.updateProfile(newProfile, this.props.history);
+this.props.updateProfile(newProfile);
   };
 
-onChange = e => {
-  this.setState({ [e.target.id]: e.target.value });
-};
+
 
 render() {
   const { errors } = this.state;
@@ -106,13 +116,13 @@ return (
 }
 
 Profile.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  updateProfile: PropTypes.func.isRequired,
+
 };
 const mapStateToProps = state => ({
   auth: state.auth
 });
 export default connect(
   mapStateToProps,
-  { logoutUser }
+  { updateProfile }
 )(Profile);
