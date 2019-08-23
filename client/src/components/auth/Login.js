@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import loginbutton from "../../images/LOGIN.png";
+import loginbutton from "../../images/submit.png";
 import classnames from "classnames";
 
 import './Login.css';
@@ -73,7 +73,7 @@ return (
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <label className="formtext white-text" htmlFor="email">Email</label>
+                <label className="formtext white-text" htmlFor="email"> EMAIL</label>
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
@@ -90,7 +90,7 @@ return (
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label className="formtext white-text" htmlFor="password">Password</label>
+                <label className="formtext white-text" htmlFor="password">PASSWORD</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
