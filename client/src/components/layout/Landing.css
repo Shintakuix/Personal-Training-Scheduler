@@ -1,33 +1,25 @@
 .bckimage {
     background-image: url("../../images/splash_home.png");
-    background-repeat: no-repeat;
+    
     background-size: cover;
     /* background-position: center center; */
     height: 800px;
   }
 
  .splashtext {
-    line-height: 180px;
+    line-height: 200px;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 200px;
+    font-size: 280px;
     text-align: 'center';
     color: white;
     opacity: 0.6
 
   }
+  .imagehover {
+    opacity: 0.8;
 
-  .img-wrap {
-    background: black;
-    display: inline-block;
-    line-height: 0;
   }
   
-  .img-wrap > img {
-        opacity: 0.6;
-        transition: 0.3s;
-        position: relative;
-    }
-  
-    .img-wrap > img:hover {
-      opacity: 1;
+  .imagehover:hover {
+    opacity: 1.0;
   }

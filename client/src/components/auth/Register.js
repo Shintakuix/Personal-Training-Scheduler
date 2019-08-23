@@ -3,7 +3,10 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
+import regbutton from "../../images/submit.png";
 import classnames from "classnames";
+
+import './Register.css';
 
 
 class Register extends Component {
@@ -51,13 +54,19 @@ this.props.registerUser(newUser, this.props.history);
 render() {
     const { errors } = this.state;
 return (
+  <div className="bckimage2">
       <div className="container">
+        <br />
+        <br />
+        <br />
+
         <div className="row">
-          <div className="col s8 offset-s2">
+          <div className="col s6 regbox">
+            <br />
             <div className="col s12">
-              <h4>
-                <b>Register</b>
-              </h4>
+     
+            <span className="regtext">REGISTER</span>
+           
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
@@ -72,10 +81,10 @@ return (
                   })}
 
                 />
-                <label htmlFor="name">Full Name</label>
+                <label className="formtext white-text" htmlFor="name">FULL NAME</label>
                 <span className="red-text">{errors.name}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field col s12 formtext">
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -86,7 +95,7 @@ return (
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label className="formtext white-text" htmlFor="email">EMAIL</label>
                 <span className="red-text">{errors.email}</span>
               </div>
               <div className="input-field col s12">
@@ -100,10 +109,10 @@ return (
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="formtext white-text" htmlFor="password">PASSWORD</label>
                 <span className="red-text">{errors.password}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field col s12" >
                 <input
                   onChange={this.onChange}
                   value={this.state.password2}
@@ -114,26 +123,32 @@ return (
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
+                <label className="formtext white-text" htmlFor="password2">CONFIRM PASSWORD</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12">
-                <button
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Sign up
-                </button>
-                <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-                </p>
-                <p className="grey-text text-darken-1">
-                <Link to="/" className="btn-flat waves-effect"><i className="material-icons left">keyboard_backspace</i></Link>Back home 
-                </p>
+                <input
+                  className="imagehover"
+                  type="image"
+                  src={regbutton}
+                  alt="regbutton"
+                  name="submit"
+                />
+                <br />
+                <br />
+
+
               </div>
             </form>
           </div>
         </div>
+        <p className="white-text text-darken-1">
+          Already have an account? <Link to="/login">Log in</Link>
+        </p>
+        <p className="white-text text-darken-1">
+          Back <Link to="/">home</Link>  
+        </p>
+      </div>
       </div>
     );
   }
