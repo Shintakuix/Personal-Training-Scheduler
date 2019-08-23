@@ -22,7 +22,7 @@ router.post("/register", (req, res) => {
         const newUser = new User({
           name: req.body.name,
           email: req.body.email,
-          password: req.body.password
+          password: req.body.password,
         });
   
         bcrypt.genSalt(10, (err, salt) => {
@@ -81,16 +81,36 @@ router.post("/login", (req, res) => {
   });
   
 router.post("/profile", (req, res) => {   
-    const { errors, isValid } = validateProfileInput(req.body);
-        if (!isValid) {
-        return res.status(400).json(errors);
-      }
+  console.log("this is request3:" + req.body.id)
+  
+   
+      User.findOneAndUpdate({ 
+       _id: req.body.id
       
-      UserProfile.insert({ 
-        age: req.body.age,
-        weight: req.body.weight,
-        height: req.body.height
-        })
-  });
+      },{
+        $set:{
+          age: req.body.age,
+          weight: req.body.weight,
+          height: req.body.height,
+
+        }
+      },      
+      (err, sessions) => {
+          if (err) {
+              return res.send ({
+                  success: false,
+                  message: 'Error: Server error'
+              });
+          }
+          
+              return res.send ({
+                  success: true,
+                  message: 'Good'
+              });
+          });
+        }
+)
+ 
+
 
   module.exports = router;

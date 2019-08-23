@@ -4,10 +4,11 @@ import {
 } from "./types";
 
 // Updating Profile
-export const updateProfile = (userData) => dispatch => {
+export const updateProfile = (userData,history) => dispatch => {
+  console.log("this data5:" + userData.id);
   axios
     .post("/api/users/profile", userData)
-    .then(res => res.json())
+    .then(res => history.push("/dashboard"))
     .then(post => 
       dispatch({
         type: NEW_PROFILE,

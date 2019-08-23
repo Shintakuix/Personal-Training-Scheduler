@@ -6,6 +6,7 @@ const validateProfileInput = require("../../validation/profile");
 
 //Routes
 router.post("/profile", (req, res) => {   
+  console.log("This is the request:" + req.age)
   const { errors, isValid } = validateProfileInput(req.body);
       if (!isValid) {
       return res.status(400).json(errors);

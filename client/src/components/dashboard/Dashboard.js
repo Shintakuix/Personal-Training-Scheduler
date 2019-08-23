@@ -5,6 +5,8 @@ import { logoutUser } from "../../actions/authActions";
 import regbutton from "../../images/submit.png";
 import logoutbutton from "../../images/LOGOUT.png";
 import { Link } from "react-router-dom";
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
 
 import './Dashboard.css';
 
@@ -13,58 +15,32 @@ class Dashboard extends Component {
     e.preventDefault();
     this.props.logoutUser();
   };
+
+
 render() {
     const { user } = this.props.auth;
     console.log(user)
 return (
   <div className="bckimage4">
-      <div className="container">
-        <br />
-        <br />
-        <br />
-
-        <div className="row">
-        <div className="col s12 regbox">
-          <br />
-          <div className="col s12 center-align">
-          
-          <span className="regtext">WELCOME, {user.name} </span>
-        
-            <p>
-              <Link to="/profile">Profile</Link>
-            </p> 
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />  
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-
+      <div className="row">
+      <div className="col s8">
+      </div>
+      <Link to="/profile">
+        <div className="col s2 right-align">
           <input
-            style={{width: "200px"}} 
-            onClick={this.onLogoutClick}
+            style={{width: "150px"}} 
+           
             className="imagehover"
             type="image"
             src={regbutton}
             alt="regbutton"
             name="submit"
-           />
-          </div> 
-          </div>
+          />
         </div>
-        <div className="row">
-        <div className="col s12 right-align">
+      </Link>      
+          <div className="col s2 left-align">
           <input
-            style={{width: "200px"}} 
+            style={{width: "150px"}} 
             onClick={this.onLogoutClick}
             className="imagehover"
             type="image"
@@ -73,8 +49,27 @@ return (
             name="submit"
           />
         </div>
-        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+        <div className="col s12 regbox4">
+          <br />
+          <div className="col s12 center-align">
+          <FullCalendar defaultView="dayGridWeek" plugins={[ dayGridPlugin ]} />
 
+
+          </div> 
+          </div>
+        </div>
+        <input
+            style={{width: "200px"}} 
+            onClick={this.onLogoutClick}
+            className="imagehover"
+            type="image"
+            src={regbutton}
+            alt="regbutton"
+            name="submit"
+           />
       </div>
       </div>
     );

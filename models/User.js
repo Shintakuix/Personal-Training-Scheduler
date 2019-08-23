@@ -20,8 +20,19 @@ const UserSchema = new mongoose.Schema({
     date: {
       type: Date,
       default: Date.now
-
-  },
+    },
+    age: {
+      type: String,
+      required: false
+    },
+    weight: {
+      type: String,
+      required: false
+    },
+    height: {
+      type: String,
+      required: false
+    },
 });
 
 const User = mongoose.model('users', UserSchema);
