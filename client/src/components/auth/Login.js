@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
+import loginbutton from "../../images/LOGIN.png";
 import classnames from "classnames";
+
+import './Login.css';
 
 class Login extends Component {
   constructor() {
@@ -45,13 +48,18 @@ this.props.loginUser(userData);
 render() {
     const { errors } = this.state;
 return (
+  <div className="bckimage3">
       <div className="container">
+        <br />
+        <br />
+        <br />
         <div className="row">
-          <div className="col s8 offset-s2">
+          <div className="col s6 regbox">
+            <br />
             <div className="col s12">
-              <h4>
-                <b>Login</b> below
-              </h4>
+
+            <span className="regtext">LOGIN</span>
+
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
@@ -65,7 +73,7 @@ return (
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label className="formtext white-text" htmlFor="email">Email</label>
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
@@ -82,29 +90,34 @@ return (
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="formtext white-text" htmlFor="password">Password</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
                 </span>
               </div>
               <div className="col s12">
-                <button
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
-                <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
-                </p>
-                <p className="grey-text text-darken-1">
-                <Link to="/" className="btn-flat waves-effect"><i className="material-icons left">keyboard_backspace</i></Link>Back home 
-                </p>
+              <input
+                  className="imagehover"
+                  type="image"
+                  src={loginbutton}
+                  alt="regbutton"
+                  name="submit"
+                />
+                <br />
+                <br />
+
               </div>
             </form>
           </div>
         </div>
+        <p className="white-text text-darken-1">
+          Don't have an account? <Link to="/register">Register</Link>
+        </p>
+        <p className="white-text text-darken-1">
+          Back <Link to="/">home</Link>  
+        </p>
+      </div>
       </div>
     );
   }
