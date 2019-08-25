@@ -1,16 +1,16 @@
-import { NEW_PROFILE } from '../actions/types';
+import { NEW_SESSION } from '../actions/types';
 
 const initialState ={
-    items: [],
-    item: {}
+
+    session: {}
 }
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case NEW_PROFILE:
+        case NEW_SESSION:
             return {
                 ...state,
-                item: action.payload
+                session: action.payload
             }
         default:
             return state;

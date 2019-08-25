@@ -33,6 +33,15 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: false
     },
+    day : {
+      type:String,
+      required:false
+    },
+
+    time : {
+      type:String,
+      required:false
+    }
 });
 
 const User = mongoose.model('users', UserSchema);

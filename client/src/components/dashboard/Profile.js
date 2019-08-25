@@ -44,7 +44,7 @@ const newProfile = {
   age: this.state.age,
   weight: this.state.weight,
   height: this.state.height,
-  id: this.props.auth.user.id
+  id: this.props.auth.user.id,
 
 };
 this.props.updateProfile(newProfile, this.props.history);

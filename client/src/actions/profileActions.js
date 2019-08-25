@@ -1,7 +1,8 @@
 import axios from "axios";
 import {
   NEW_PROFILE,
-  SHOW_PROFILE
+  SHOW_PROFILE,
+  NEW_SESSION
 } from "./types";
 
 // Updating Profile
@@ -33,5 +34,17 @@ export const loadProfile = (id) => dispatch => {
     
 
 };
+
+export const scheduleSession = (sessionData) => dispatch => {
+  console.log("schedule call working: " + sessionData.id);
+  axios
+    .post("/api/users/schedule", sessionData)
+    .then(res => 
+      dispatch({
+        type: NEW_SESSION,
+        payload: res.data
+      })
+    );
+  };
 
 

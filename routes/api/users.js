@@ -7,7 +7,7 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 const validateProfileInput = require("../../validation/profile");
 const User = require("../../models/User");
-const UserProfile = require("../../models/Profile");
+
 
 //Routes
 router.post("/register", (req, res) => {   
@@ -124,10 +124,34 @@ User.findOne( {
   res.json(err);
 });
 
-
-
- 
 });
+
+
+  
+router.post("/schedule", (req, res) => {   
+  console.log("this is request10:" + req.body.time + req.body.id + req.body.day )
+       User.findOneAndUpdate({ 
+       _id: req.body.id
+        },{
+        $set:{
+          day:req.body.day, 
+          time:req.body.time
+        }
+      },      
+      (err, sessions) => {
+          if (err) {
+              return res.send ({
+                  success: false,
+                  message: 'Error: Server error'
+              });
+          } return res.send ({
+                  success: true,
+                  message: 'Good'
+              });
+          });
+        }
+      
+)
  
 
 

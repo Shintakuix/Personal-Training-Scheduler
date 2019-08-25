@@ -2,7 +2,8 @@ import { SHOW_PROFILE } from '../actions/types';
 
 const initialState ={
 
-    item: {}
+    item: {},
+   
 }
 
 export default function(state = initialState, action) {

@@ -2,26 +2,36 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import { loadProfile } from "../../actions/profileActions";
+import { loadProfile, scheduleSession } from "../../actions/profileActions";
 import splashPic from "../../images/sched_top.png";
 
 import regbutton from "../../images/submit.png";
 import logoutbutton from "../../images/LOGOUT.png";
 import profiletbutton from "../../images/UPDATEPROFILE.png";
 import { Link } from "react-router-dom";
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid';
+/* import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'; */
 
 
 import './Dashboard.css';
 
 
 class Dashboard extends Component {
-  state ={
-    users:[],
-  };
+  constructor() {
+    super();
 
- 
+  this.state ={
+    item:[],
+    users:[],
+    day: "",
+    time: "",
+    button: true,
+    id:""
+  };
+  console.log(this.state)
+  
+  }
+
 
   componentDidMount() {
     const key= this.props.auth.user.id;
@@ -35,12 +45,31 @@ class Dashboard extends Component {
     this.props.logoutUser();
   };
 
+  grabInfo = () => {
+    console.log("onclick working");
+ 
+    /* this.setState({ button: !this.state.button }); */
+    this.setState({day:"Monday", time: "10am" });
+
+    console.log("hellooo", this.state)
+
+    const newSession = {
+      day: this.state.day,
+      time: this.state.time,
+      id: this.props.auth.user.id
+    }
+      this.props.scheduleSession(newSession);
+    
+  };
+
+
 
 render() {
   const { item } = this.props.prof
-    const { user } = this.props.auth;
-    console.log(user)
-    console.log(item.data)
+    
+  
+    console.log(item)
+
 return (
   <div className="bckimage4">
      <div className="row">
@@ -64,7 +93,7 @@ return (
 
     </div>
     <div className= "container">
-      
+      <br />
         <div className="row">
         <div className="col col1 s2">
           <div className="row">
@@ -83,7 +112,8 @@ return (
           <br />
           <span className="formtext5 black-text" >HEIGHT: {item.height}</span>
           <br />
-          <span className="formtext5 black-text" >NEXT SESSIONS:</span>
+          <span className="formtext5 black-text" >NEXT SESSIONS:</span><br />
+          <span className="formtext5 black-text" >Day: {item.day} <br /> Time:  {item.time}</span>
           <br />
           <br />
           <br />
@@ -137,6 +167,7 @@ return (
           <div className="col s2 center-align">
           <span className="regtext8">FRIDAY</span>
           </div>
+          
         </div>
 
         <div className="row">
@@ -144,8 +175,21 @@ return (
           </div>
           <div className="col s2 center-align">
             
-            <div className="square">
-            <span className="regtext8">10 AM</span>
+            <div 
+           
+/*             className={this.state.button ? "buttonTrue": "buttonFalse"} */
+            onClick={this.grabInfo}    
+            value= {this.state.value} 
+            name="time"
+/*             idday="day"
+            valueday="Monday"
+            idtime="time"
+            valutime="10 am" */
+            >
+            <span className="regtext8" 
+                  
+                  >10 AM
+            </span>
             </div>
           </div>
           <div className="col s2 center-align">
@@ -289,7 +333,7 @@ return (
 
         
         
-        <div className="row">
+        <div className="row right-align">
         
         
         <input
@@ -314,13 +358,15 @@ return (
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  prof: PropTypes.object.isRequired
+  prof: PropTypes.object.isRequired,
+  sess: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
   auth: state.auth,
-  prof: state.prof
+  prof: state.prof,
+  sess: state.sess
 });
 export default connect(
   mapStateToProps,
-  { logoutUser, loadProfile }
+  { logoutUser, loadProfile, scheduleSession }
 )(Dashboard);
