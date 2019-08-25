@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { loadProfile } from "../../actions/profileActions";
+import splashPic from "../../images/sched_top.png";
 
 import regbutton from "../../images/submit.png";
 import logoutbutton from "../../images/LOGOUT.png";
@@ -42,13 +43,12 @@ render() {
     console.log(item.data)
 return (
   <div className="bckimage4">
-    <div className= "container">
-      <div className="row right-align">
-      <br />
-      <div className="col s2 offset-s8">
+     <div className="row">
+       <div className="col left-align">
+      <img src={splashPic} alt="splashPic" />
       </div>
-      
-          
+      <div className="col offset-s6">
+             
           <input
             style={{width: "150px"}} 
             onClick={this.onLogoutClick}
@@ -60,26 +60,30 @@ return (
           />
       
       </div>
+
+
+    </div>
+    <div className= "container">
       
         <div className="row">
-        <div className="col col1 s4">
+        <div className="col col1 s2">
           <div className="row">
           <div className="col col1 s12 regbox8 ">
           <br />
           <span className="regtext">PROFILE </span>
           <br />
           <br />
-          <span className="formtext black-text" >NAME: {item.name}</span>
+          <span className="formtext5 black-text" >NAME: {item.name}</span>
           <br />
-          <span className="formtext black-text" >EMAIL: {item.email}</span>
+          <span className="formtext5 black-text" >EMAIL: {item.email}</span>
           <br />
-          <span className="formtext black-text" >AGE: {item.age}</span>
+          <span className="formtext5 black-text" >AGE: {item.age}</span>
           <br />
-          <span className="formtext black-text" >WEIGHT: {item.weight}</span>
+          <span className="formtext5 black-text" >WEIGHT: {item.weight}</span>
           <br />
-          <span className="formtext black-text" >HEIGHT: {item.height}</span>
+          <span className="formtext5 black-text" >HEIGHT: {item.height}</span>
           <br />
-          <span className="formtext black-text" >NEXT SESSIONS:</span>
+          <span className="formtext5 black-text" >NEXT SESSIONS:</span>
           <br />
           <br />
           <br />
@@ -105,12 +109,178 @@ return (
       </div>
       </div>
 
-      <div className="col col2 s8">
+      <div className="col col2 s10">
         <div className="row">
         <div className="col col1 s12 regbox8 ">
+        <div className="row">
+          <div className="col s12 center-align">
+            <br />
+            <span className="regtext7">AVAILABLE SESSIONS THIS WEEK</span>
+          </div>
+        </div>
+
+        <div className="row">
+        <div className="col s1">
+          </div>
+          <div className="col s2 center-align">
+          <span className="regtext8">MONDAY</span>
+          </div>
+          <div className="col s2 center-align">
+          <span className="regtext8">TUESDAY</span>
+          </div>
+          <div className="col s2 center-align">
+          <span className="regtext8">WEDNESDAY</span>
+          </div>
+          <div className="col s2 center-align">
+          <span className="regtext8">THUSDAY</span>
+          </div>
+          <div className="col s2 center-align">
+          <span className="regtext8">FRIDAY</span>
+          </div>
+        </div>
+
+        <div className="row">
+        <div className="col s1">
+          </div>
+          <div className="col s2 center-align">
+            
+            <div className="square">
+            <span className="regtext8">10 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+           
+            <div className="square">
+            <span className="regtext8">10 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+        
+            <div className="square">
+            <span className="regtext8">10 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+       
+            <div className="square">
+            <span className="regtext8">10 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+    
+            <div className="square">
+            <span className="regtext8">10 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+        <div className="col s1">
+          </div>
+          <div className="col s2 center-align">
+            
+            <div className="square">
+            <span className="regtext8">11 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+           
+            <div className="square">
+            <span className="regtext8">11 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+        
+            <div className="square">
+            <span className="regtext8">11 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+       
+            <div className="square">
+            <span className="regtext8">11 AM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+    
+            <div className="square">
+            <span className="regtext8">11 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+        <div className="col s1">
+          </div>
+          <div className="col s2 center-align">
+            
+            <div className="square">
+            <span className="regtext8">1 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+           
+            <div className="square">
+            <span className="regtext8">1 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+        
+            <div className="square">
+            <span className="regtext8">1 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+       
+            <div className="square">
+            <span className="regtext8">1 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+    
+            <div className="square">
+            <span className="regtext8">1 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+        <div className="col s1">
+          </div>
+          <div className="col s2 center-align">
+            
+            <div className="square">
+            <span className="regtext8">2 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+           
+            <div className="square">
+            <span className="regtext8">2 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+        
+            <div className="square">
+            <span className="regtext8">2 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+       
+            <div className="square">
+            <span className="regtext8">2 PM</span>
+            </div>
+          </div>
+          <div className="col s2 center-align">
+    
+            <div className="square">
+            <span className="regtext8">2 PM</span>
+            </div>
+          </div>
+        </div>
         <br />
        
-          <FullCalendar defaultView="dayGridWeek" plugins={[ dayGridPlugin ]} />
+          
 
 
        

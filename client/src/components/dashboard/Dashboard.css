@@ -20,10 +20,29 @@
     opacity: 1
 
   }
+  .regtext7 {
+   
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 50px;
+    text-align: 'center';
+    
+    opacity: 1
 
-  .formtext {
+  }
+  .regtext8 {
+   
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 25px;
+    text-align: 'center';
+    
+    opacity: 1
+
+  }
+
+  .formtext5 {
    
     font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px
   
   }
 
@@ -67,4 +86,13 @@
   
   .col2 {
     margin-right:-50px
+  }
+
+  .square {
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-color: black
   }
