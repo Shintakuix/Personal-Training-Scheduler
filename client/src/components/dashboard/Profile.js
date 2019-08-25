@@ -57,7 +57,7 @@ render() {
   const { user } = this.props.auth;
   console.log(user)
 return (
-  <div className="bckimage4">
+  <div className="bckimage5">
     <div className="container">
     <br />
     <br />

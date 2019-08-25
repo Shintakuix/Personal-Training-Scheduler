@@ -109,7 +109,25 @@ router.post("/profile", (req, res) => {
               });
           });
         }
+        
 )
+
+router.get("/information/:id", (req, res) => {   
+  console.log("This is the request for users:" + req.params.id)
+
+User.findOne( {
+  _id: req.params.id
+})
+
+.then(dbUser => res.json(dbUser))
+.catch(function(err) {
+  res.json(err);
+});
+
+
+
+ 
+});
  
 
 

@@ -17,14 +17,19 @@ router.post("/profile", (req, res) => {
       weight: req.body.weight,
       height: req.body.height
       })
-/*       .then(profile => {
-        if (!profile)
-        const newProfile = new Profile({
-          age: req.body.age,
-          weight: req.body.weight,
-          height: req.body.height
-      })
-  }); */
 });
+
+router.get("/information", (req, res) => {   
+  console.log("This is the request for users:")
+
+User.insertOne({ 
+  age: req.body.age,
+  weight: req.body.weight,
+  height: req.body.height
+  })
+ 
+});
+
+
 
   module.exports = router;

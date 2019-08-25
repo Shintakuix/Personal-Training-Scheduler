@@ -1,17 +1,12 @@
-.bckimage2 {
-    background-image: url("../../images/Register_Splash.png");
+.bckimage5 {
+    background-image: url("../../images/profile_Splash.png");
    
     background-size: cover;
-    
     min-height: 100%;
     min-width: 1024px;
 	
     width: 100%;
     height: auto;
-	
-    position: fixed;
-    top: 0;
-    left: 0;
   }
 
  .regtext {

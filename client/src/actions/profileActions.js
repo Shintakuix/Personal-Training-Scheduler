@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   NEW_PROFILE,
+  SHOW_PROFILE
 } from "./types";
 
 // Updating Profile
@@ -16,3 +17,21 @@ export const updateProfile = (userData,history) => dispatch => {
       })
     );
 };
+
+//Getting profile information
+
+export const loadProfile = (id) => dispatch => {
+  console.log("axios call working");
+  axios
+    .get("/api/users/information/" + id)
+    .then(res => 
+      dispatch({
+        type: SHOW_PROFILE,
+        payload: res.data
+      })
+    );
+    
+
+};
+
+

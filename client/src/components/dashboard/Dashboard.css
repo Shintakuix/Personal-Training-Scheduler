@@ -37,10 +37,34 @@
     opacity: 1.0;
   }
 
-  .regbox4 {
+  .regbox8 {
+    
+    
     background-color: rgba(255, 255, 255, 0.9);
     -webkit-box-shadow: 0px 0px 16px 7px rgba(0,66,133,0.69);
     -moz-box-shadow: 0px 0px 16px 7px rgba(0,66,133,0.69);
     box-shadow: 0px 0px 16px 7px rgba(0,66,133,0.69);
   
+  }
+/*   .regbox9 {
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0px 0px 16px 7px rgba(0,66,133,0.69);
+    -moz-box-shadow: 0px 0px 16px 7px rgba(0,66,133,0.69);
+    box-shadow: 0px 0px 16px 7px rgba(0,66,133,0.69);
+  
+  } */
+
+  .container {
+    width: 95%;
+  
+
+  }
+
+  .col1 {
+    margin-right:50px
+  }
+  
+  .col2 {
+    margin-right:-50px
   }
