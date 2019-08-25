@@ -19,13 +19,13 @@ import './Dashboard.css';
 class Dashboard extends Component {
   constructor() {
     super();
-
+ this.grabInfo = this.grabInfo.bind(this);
   this.state ={
     item:[],
     users:[],
     day: "",
     time: "",
-    button: true,
+    /* button: true, */
     id:""
   };
   console.log(this.state)
@@ -45,11 +45,12 @@ class Dashboard extends Component {
     this.props.logoutUser();
   };
 
-  grabInfo = () => {
+  grabInfo = (e) => {
+    e.preventDefault();
     console.log("onclick working");
  
     /* this.setState({ button: !this.state.button }); */
-    this.setState({day:"Monday", time: "10am" });
+    this.setState({day:e.currentTarget.dataset.day, time: e.currentTarget.dataset.time });
 
     console.log("hellooo", this.state)
 
@@ -59,6 +60,8 @@ class Dashboard extends Component {
       id: this.props.auth.user.id
     }
       this.props.scheduleSession(newSession);
+      this.props.loadProfile(this.props.auth.user.id)
+   
     
   };
 
@@ -178,9 +181,10 @@ return (
             <div 
            
 /*             className={this.state.button ? "buttonTrue": "buttonFalse"} */
-            onClick={this.grabInfo}    
-            value= {this.state.value} 
-            name="time"
+            className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Monday"
+            data-time="10am"
 /*             idday="day"
             valueday="Monday"
             idtime="time"
@@ -194,25 +198,38 @@ return (
           </div>
           <div className="col s2 center-align">
            
-            <div className="square">
+            <div className="square"
+             onClick={this.grabInfo.bind(this)}    
+             data-day="Tuesday"
+             data-time="10am"
+            >
             <span className="regtext8">10 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
         
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Wednesday"
+            data-time="10am">
             <span className="regtext8">10 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
        
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Thursday"
+            data-time="10am">
             <span className="regtext8">10 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
     
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Friday"
+            data-time="10am">
             <span className="regtext8">10 AM</span>
             </div>
           </div>
@@ -223,31 +240,47 @@ return (
           </div>
           <div className="col s2 center-align">
             
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Monday"
+            data-time="11am">
             <span className="regtext8">11 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
            
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Tuesday"
+            data-time="11am">
             <span className="regtext8">11 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
         
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Wednesday"
+            data-time="11am">
+        
             <span className="regtext8">11 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
        
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Thrusday"
+            data-time="11am">
             <span className="regtext8">11 AM</span>
             </div>
           </div>
           <div className="col s2 center-align">
     
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Friday"
+            data-time="11am">
             <span className="regtext8">11 AM</span>
             </div>
           </div>
@@ -258,31 +291,47 @@ return (
           </div>
           <div className="col s2 center-align">
             
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Monday"
+            data-time="1pm">
+        
             <span className="regtext8">1 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
            
-            <div className="square">
+            <div className="square"
+              onClick={this.grabInfo.bind(this)}    
+              data-day="Tuesday"
+              data-time="1pm">
             <span className="regtext8">1 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
         
-            <div className="square">
+            <div className="square"
+              onClick={this.grabInfo.bind(this)}    
+              data-day="Wednesday"
+              data-time="1pm">
             <span className="regtext8">1 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
        
-            <div className="square">
+            <div className="square"
+              onClick={this.grabInfo.bind(this)}    
+              data-day="Thursday"
+              data-time="1pm">
             <span className="regtext8">1 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
     
-            <div className="square">
+            <div className="square"
+              onClick={this.grabInfo.bind(this)}    
+              data-day="Friday"
+              data-time="1pm">
             <span className="regtext8">1 PM</span>
             </div>
           </div>
@@ -293,31 +342,46 @@ return (
           </div>
           <div className="col s2 center-align">
             
-            <div className="square">
+            <div className="square"
+              onClick={this.grabInfo.bind(this)}    
+              data-day="Monday"
+              data-time="2pm">
             <span className="regtext8">2 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
            
-            <div className="square">
+            <div className="square"
+              onClick={this.grabInfo.bind(this)}    
+              data-day="Tuesday"
+              data-time="2pm">
             <span className="regtext8">2 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
         
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Wednesday"
+            data-time="2pm">
             <span className="regtext8">2 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
        
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Thrusday"
+            data-time="2pm">
             <span className="regtext8">2 PM</span>
             </div>
           </div>
           <div className="col s2 center-align">
     
-            <div className="square">
+            <div className="square"
+            onClick={this.grabInfo.bind(this)}    
+            data-day="Friday"
+            data-time="2pm">
             <span className="regtext8">2 PM</span>
             </div>
           </div>
