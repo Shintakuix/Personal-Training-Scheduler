@@ -115,7 +115,7 @@ return (
           <br />
           <span className="formtext5 black-text" >HEIGHT: {item.height}</span>
           <br />
-          <span className="formtext5 black-text" >NEXT SESSIONS:</span><br />
+          <span className="formtext5 black-text" >NEXT SESSION:</span><br />
           <span className="formtext5 black-text" >Day: {item.day} <br /> Time:  {item.time}</span>
           <br />
           <br />
@@ -148,7 +148,7 @@ return (
         <div className="row">
           <div className="col s12 center-align">
             <br />
-            <span className="regtext7">AVAILABLE SESSIONS THIS WEEK</span>
+            <span className="regtext7">SELECT YOUR WORKOUT TIME</span>
           </div>
         </div>
 
@@ -400,15 +400,7 @@ return (
         <div className="row right-align">
         
         
-        <input
-            style={{width: "150px"}} 
-            onClick={this.onLogoutClick}
-            className="imagehover"
-            type="image"
-            src={regbutton}
-            alt="regbutton"
-            name="submit"
-           />
+ 
       </div>
       </div>
     </div>
@@ -434,3 +426,13 @@ export default connect(
   mapStateToProps,
   { logoutUser, loadProfile, scheduleSession }
 )(Dashboard);
+
+ /*       <input
+            style={{width: "150px"}} 
+            onClick={this.onLogoutClick}
+            className="imagehover"
+            type="image"
+            src={regbutton}
+            alt="regbutton"
+            name="submit"
+           /> */

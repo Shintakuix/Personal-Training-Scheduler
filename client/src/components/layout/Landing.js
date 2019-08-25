@@ -6,7 +6,11 @@ import registerimg from "../../images/REGISTER.png"
 import loginimg from "../../images/LOGIN.png";
 import './Landing.css';
 
+
+
 class Landing extends Component {
+
+
   render() {
     return (
 
@@ -44,6 +48,11 @@ class Landing extends Component {
                    width: "200px"}} 
                    className="imagehover" src={registerimg} alt="registerimg" />
               </Link>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              
             </div>
           </div>
         </div>

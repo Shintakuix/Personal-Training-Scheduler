@@ -1,13 +1,20 @@
 .bckimage2 {
     background-image: url("../../images/Register_Splash.png");
-   
+  
+
     background-size: cover;
-    
+    background-repeat: no-repeat;
     min-height: 100%;
     min-width: 1024px;
-	
+    
+    
     width: 100%;
     height: auto;
+    
+   
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
  .regtext {
@@ -50,7 +57,4 @@
   opacity: 1;
   }
 
-  button {
-    padding: 0;
-    background: transparent
-  }
+ 

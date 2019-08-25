@@ -2,12 +2,18 @@
     background-image: url("../../images/login_Splash.png") ;
    
     background-size: cover;
-
+    background-repeat: no-repeat;
     min-height: 100%;
     min-width: 1024px;
-	
+    
+    
     width: 100%;
     height: auto;
+    
+   
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
  .regtext {
@@ -48,9 +54,4 @@
 
   .noregbox {
   opacity: 1;
-  }
-
-  button {
-    padding: 0;
-    background: transparent
   }
